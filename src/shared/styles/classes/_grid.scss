@@ -1,0 +1,49 @@
+@use '../abstracts/variables'as *;
+@use '../mixins/'as *;
+
+
+// ? Create Grid Columns
+@for $i from 1 through $grid_columns {
+
+  @include make_col(#{"" + $i});
+  
+  @each $break_point,
+  $break_point_value in $break_pointes {
+    @include make_col_mq(#{"" + $break_point}, #{"" + $i});
+  }
+}
+
+// ? Create Flex Positions Classes
+@each $position,
+$position_value in $grid__positions {
+
+  @include make_flex($position, $position_value);
+
+  @each $break_point,
+  $break_point_value in $break_pointes {
+    @include make_flex_mq($position, $position_value, $break_point)
+  }
+
+}
+
+// ? Create Display Options for any Media Query
+@each $display, $display_value in $display_map {
+
+  @include make_display($display);
+
+  @each $break_point,
+  $break_point_value in $break_pointes {
+    @include make_display_mq($display, $break_point);
+  }
+}
+
+// ? Create Wrap Options for any Media Query
+@each $wrap, $wrap_value in $wrap_map {
+
+  @include wrap($wrap);
+
+  @each $break_point,
+  $break_point_value in $break_pointes {
+    @include wrap_mq($wrap, $break_point);
+  }
+}

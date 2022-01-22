@@ -1,0 +1,16 @@
+@use '../abstracts/variables'as *;
+@use './media_query'as *;
+
+@mixin make_display($display) {
+  .d-#{"" + $display} {
+    display: #{"" + $display} !important;
+  }
+}
+
+@mixin make_display_mq($display, $break_point) {
+  .d-#{"" + $break_point}-#{"" + $display} {
+    @include mq(map-get($break_pointes, $break_point)) {
+      display: #{"" + $display} !important;
+    }
+  }
+}

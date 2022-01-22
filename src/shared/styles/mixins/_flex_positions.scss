@@ -1,0 +1,61 @@
+@use '../abstracts/variables'as *;
+@use './media_query'as *;
+
+@mixin make_flex($position, $position_value) {
+  .align-items-#{"" + $position} {
+    align-items: #{"" + $position_value};
+  }
+
+  .align-content-#{"" + $position} {
+    align-content: #{"" + $position_value};
+  }
+
+  .justify-content-#{"" + $position} {
+    justify-content: #{"" + $position_value};
+  }
+
+  .justify-items-#{"" + $position} {
+    justify-items: #{"" + $position_value};
+  }
+}
+
+@mixin make_flex_mq($position, $position_value, $break_point) {
+  .align-items-#{""+ $break_point}-#{"" + $position} {
+    @include mq(map-get($break_pointes, $break_point)) {
+      align-items: #{"" + $position_value};
+    }
+
+  }
+
+  .align-content-#{""+ $break_point}-#{"" + $position} {
+    @include mq(map-get($break_pointes, $break_point)) {
+      align-content: #{"" + $position_value};
+    }
+  }
+
+  .justify-content-#{""+ $break_point}-#{"" + $position} {
+    @include mq(map-get($break_pointes, $break_point)) {
+      justify-content: #{"" + $position_value};
+    }
+  }
+
+  .justify-items-#{""+ $break_point}-#{"" + $position} {
+    @include mq(map-get($break_pointes, $break_point)) {
+      justify-items: #{"" + $position_value};
+    }
+  }
+}
+
+@mixin wrap($wrap) {
+  .flex-#{""+ $wrap}{
+    flex-wrap: #{""+ $wrap};
+  }
+}
+
+@mixin wrap_mq($wrap, $break_point) {
+  .flex-#{""+ $break_point}-#{""+ $wrap}{
+    @include mq(map-get($break_pointes, $break_point)) {
+      flex-wrap: #{"" + $wrap} !important;
+    }
+  }
+}

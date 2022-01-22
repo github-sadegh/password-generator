@@ -1,0 +1,68 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+// ? button kind list:
+/* 
+    fill
+    overlay
+    outline
+*/
+
+// ? button mixin
+// ? fill is defulat kind
+@mixin setButton($colorMap, $size, $type: 'fill' ) {
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: .2s all ease-in-out;
+    height: map-get($button_sizes, $size);
+    width: map-get($button_sizes, $size) * 2.5;
+    border-radius: map-get($border-radius, default);
+
+    &:active {
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px map-get($colorMap , 100);
+        transition: .1s all ease-in-out;
+    }
+
+    @if $type == 'overlay' {
+        color: map-get($colorMap , 700);
+        background-color: map-get($colorMap , 50);
+        
+        &:hover {
+            background-color: map-get($colorMap , 100);
+        }
+        &:disabled {
+            background-color: map-get($colorMap , 25);
+            color: map-get($colorMap , 300);
+            cursor: not-allowed;
+        }
+    }
+
+    @else if $type == 'outline' {
+        color: map-get($colorMap , 700);
+        background-color: white;
+        border: 1px solid map-get($colorMap , 700);
+
+        &:hover {
+            background-color: map-get($colorMap , 50);
+        }
+        &:disabled {
+            background-color: map-get($colorMap , 200);
+            cursor: not-allowed;
+        }
+    }
+
+    @else {
+        color: white;
+        background-color: map-get($colorMap , default);
+        
+    
+        &:hover {
+            background-color: map-get($colorMap , 700);
+        }
+        &:disabled {
+            background-color: map-get($colorMap , 200);
+            cursor: not-allowed;
+        }
+
+    }
+}

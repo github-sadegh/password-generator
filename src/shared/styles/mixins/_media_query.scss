@@ -1,0 +1,9 @@
+@use '../abstracts/variables' as *;
+
+@mixin mq($key) {
+  $min: map-get($key, min);
+  $max: map-get($key, max);
+  @media screen and (max-width: $max) {
+    @content;
+  }
+}

@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as *;
+@use './media_query' as *;
+
+@mixin make_col($columns) {
+  .col-#{"" + $columns} {
+    flex: 0 0 calc(100% /$grid_columns * $columns);
+    max-width: calc(100% /$grid_columns * $columns);
+  }
+}
+
+@mixin make_col_mq($break_point:'', $columns) {
+  .col-#{"" + $break_point}-#{$columns} {
+    @include mq(map-get($break_pointes, $break_point)) {
+      flex: 0 0 calc(100% /$grid_columns * $columns) !important;
+      max-width: calc(100% /$grid_columns * $columns) !important;
+    }
+  }
+}

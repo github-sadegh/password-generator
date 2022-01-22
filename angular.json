@@ -31,6 +31,11 @@
               "src/assets"
             ],
             "styles": [
+              "src/shared/styles/classes/_typography.scss",
+              "src/shared/styles/classes/_grid.scss",
+              "src/shared/styles/classes/_colors_class.scss",
+              "src/shared/styles/classes/_spacing.scss",
+              "src/shared/styles/classes/_utils_classes.scss",
               "src/styles.scss"
             ],
             "scripts": []

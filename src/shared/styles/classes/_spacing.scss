@@ -1,0 +1,71 @@
+$spacing_units: 8;
+
+@for $i from 0 through $spacing_units {
+  .m-#{"" + $i} {
+    margin: $i * 0.25rem;
+  }
+
+  .mt-#{"" + $i} {
+    margin-top: $i * 0.25rem !important;
+  }
+
+  .mb-#{"" + $i} {
+    margin-bottom: $i * 0.25rem !important;
+  }
+
+  .ml-#{"" + $i} {
+    margin-left: $i * 0.25rem !important;
+  }
+
+  .mr-#{"" + $i} {
+    margin-right: $i * 0.25rem !important;
+  }
+
+  .my-#{"" + $i} {
+    margin-top: $i * 0.25rem !important;
+    margin-bottom: $i * 0.25rem !important;
+  }
+
+  .mx-#{"" + $i} {
+    margin-left: $i * 0.25rem !important;
+    margin-right: $i * 0.25rem !important;
+  }
+
+  .p-#{"" + $i} {
+    padding: $i * 0.25rem;
+  }
+
+  .pt-#{"" + $i} {
+    padding-top: $i * 0.25rem !important;
+  }
+
+  .pb-#{"" + $i} {
+    padding-bottom: $i * 0.25rem !important;
+  }
+
+  .pl-#{"" + $i} {
+    padding-left: $i * 0.25rem !important;
+  }
+
+  .pr-#{"" + $i} {
+    padding-right: $i * 0.25rem !important;
+  }
+
+  .py-#{"" + $i} {
+    padding-top: $i * 0.25rem !important;
+    padding-bottom: $i * 0.25rem !important;
+  }
+
+  .px-#{"" + $i} {
+    padding-left: $i * 0.25rem !important;
+    padding-right: $i * 0.25rem !important;
+  }
+}
+
+.mx-auto{
+  margin: 0 auto!important;
+}
+
+.my-auto{
+  margin: auto 0!important;
+}

@@ -1,0 +1,9 @@
+@use '../abstracts/variables'as *;
+@use '../abstracts/colors'as *;
+
+@each $position,
+$value in $border_positions {
+  .border-#{""+ $position} {
+    border-#{""+$value}: 1px solid setColor(gray, 300) !important;
+  }
+};
