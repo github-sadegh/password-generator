@@ -7,3 +7,10 @@ $value in $border_positions {
     border-#{""+$value}: 1px solid setColor(gray, 300) !important;
   }
 };
+
+
+.small--circle-avatar{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
