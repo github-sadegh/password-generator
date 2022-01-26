@@ -1,10 +1,21 @@
 <section class="col-4 my-5 mx-auto p-4 bg-gray__50 d-flex flex-wrap" *ngIf="initUser">
-  <header class="col-12 d-flex align-items-center">
+  <header class="col-12 d-flex align-items-center justify-content-between">
     <img loading='lazy' width="48px" class="small--circle-avatar" [src]="currentUser.photoUrl"
       [alt]="currentUser.firstName" (error)="errorHandler($event)">
 
-      <span class="body-copy-regular gray__900 mr-2">
-              {{currentUser.name}}
-      </span>
+    <span class="body-copy-regular gray__900 mr-2">
+      {{currentUser.name}}
+    </span>
   </header>
+
+  <main class="col-12 d-flex flex-wrap border-top mt-3">
+    <input class="my-2" type="text" [formControl]="title" placeholder="عنوان">
+    <input class="my-2" type="text" [formControl]="title" placeholder="نام کاربری">
+
+    <button class="btn-primary my-2">
+      <span class="small-copy-regular">تولید رمز</span>
+    </button>
+
+    <input class="my-2" type="text" [formControl]="title" placeholder="رمز عبور" readonly>
+  </main>
 </section>

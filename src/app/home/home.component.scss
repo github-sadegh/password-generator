@@ -1,3 +1,14 @@
-section{
-        border-radius: 12px;
+@use '../../shared/styles/mixins/buttons'as *;
+@use '../../shared/styles/abstracts/colors'as *;
+
+section {
+  border-radius: 12px;
+}
+
+input {
+  display: block;
+}
+
+button {
+        @include setButton(map-get($colors, primary), sm)
 }

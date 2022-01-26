@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { SocialAuthService, SocialUser } from 'angularx-social-login';
 import { LocalRepository } from 'src/shared/helper/local-repository';
 
@@ -15,6 +16,9 @@ export class HomeComponent implements OnInit {
   defalutAvatar: string = '';
   initUser: boolean = false;
 
+  // ? Form Controlles
+  title = new FormControl('');
+
   constructor(
     private localRepo: LocalRepository,
     private socialAuthService: SocialAuthService,
@@ -28,7 +32,6 @@ export class HomeComponent implements OnInit {
           this.socialAuthService.authState.subscribe(res => {
             if(res.id){
               this.currentUser = res;
-              this.currentUser.photoUrl = 'asdfasd'
               this.defalutAvatar = `https://eu.ui-avatars.com/api/?name=${this.currentUser.firstName}+${this.currentUser.lastName}`;
             }
           })
